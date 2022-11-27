@@ -1,0 +1,54 @@
+@use './mixins/mixins.scss' as *;
+
+@font-face {
+  font-family: "s-ui-icon"; /* Project id 3794967 */
+  src: url('./fonts/iconfont.woff2') format('woff2'),
+       url('./fonts/iconfont.woff') format('woff'),
+       url('./fonts/iconfont.ttf') format('truetype');
+}
+
+// .s-ui-icon {
+  // font-family: "s-ui-icon" !important;
+  // font-size: 16px;
+  // font-style: normal;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
+// }
+
+
+[class^='#{$namespace}-icon'], [class*='#{$namespace}-icon'] {
+  font-family: "s-ui-icon" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.#{$namespace}-icon-iddenglu:before {
+  content: "\e60a";
+}
+
+.#{$namespace}-icon-tuichudenglu:before {
+  content: "\e647";
+}
+
+.#{$namespace}-icon-tuichudenglu1:before {
+  content: "\e608";
+}
+
+.#{$namespace}-icon-tuichudenglu2:before {
+  content: "\e611";
+}
+
+.#{$namespace}-icon-denglu-weixindenglu:before {
+  content: "\e629";
+}
+
+.#{$namespace}-icon-dengluzhuce:before {
+  content: "\e613";
+}
+
+.#{$namespace}-icon-denglu:before {
+  content: "\e7c8";
+}
+
