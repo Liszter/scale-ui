@@ -1,0 +1,17 @@
+{
+  "name": "@scale-ui/atomcss",
+  "version": "1.0.0",
+  "description": "原子css实践，长期有效",
+  "main": "dist/index.css",
+  "module": "dist/index.css",
+  "scripts": {
+    "build": "node less.js src dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "atomcss",
+    "tools"
+  ],
+  "author": "liszter",
+  "license": "ISC"
+}
