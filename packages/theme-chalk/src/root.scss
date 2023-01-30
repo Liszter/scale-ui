@@ -1,0 +1,44 @@
+/**
+表示默认值。给一个未通过
+!default
+声明赋值的变量赋值，此时，如果变量已经被赋值，不会再被重新赋值;但是如果变量还没有被赋值，则会被赋予新的值
+**/ 
+
+/* 背景色 */
+$--primary-1: #39A871  !default;
+$--primary-2: #27A574  !default;
+$--primary-3: #E5F4EE  !default;
+$--primary-4: #F5F5F5  !default;
+/* color end */
+
+/* font-color */
+$--color-text-7: #ffffff  !default;
+$--color-text-6: #39a871  !default;
+$--color-text-5: #27A574  !default;
+$--color-text-4: #262626  !default;
+$--color-text-3: #595959  !default;
+$--color-text-2: #999999  !default;
+$--color-text-1: #919399  !default;
+$--color-text-0: #000  !default;
+/* font-color end */
+
+
+/* border-color */
+$--color-border-4: rgb(220, 223, 230)  !default;
+$--color-border-3: rgb(228, 231, 237)  !default;
+$--color-border-2: rgb(235, 238, 245)  !default;
+$--color-border-1: #F5F5F5  !default;
+/* border-color end */
+
+/* base color */
+$--color-base-black: rgb(0, 0, 0)  !default;
+$--color-base-white: rgb(255, 255, 255)  !default;
+$--color-base-gray: rgb(247, 248, 250)  !default;
+/* base-color  end */
+
+/* font-size */
+$--font-size-20: 20rpx  !default;
+$--font-size-24: 24rpx  !default;
+$--font-size-28: 28rpx  !default;
+$--font-size-32: 32rpx  !default;
+/* font-size end */
