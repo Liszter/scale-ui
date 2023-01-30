@@ -2,7 +2,7 @@
  * @Author: liszter@qq.com liszter@qq.com
  * @Date: 2023-01-29 15:16:01
  * @LastEditors: liszter@qq.com liszter@qq.com
- * @LastEditTime: 2023-01-29 18:09:15
+ * @LastEditTime: 2023-01-30 17:50:52
  * @FilePath: \scale-ui\packages\components\button\src\button.ts
  * @Description: 按钮组件 封装
  * 具体功能参考 props
@@ -12,15 +12,25 @@
 import type { ExtractPropTypes, PropType } from "vue"
 
 export const buttonProps = {
+
+    /**
+   *  按钮是否为块级元素：
+   * @defaultValue false
+   **/
+    block: {
+      type: Boolean,
+      default: false
+    },
+
   /**
-   *  按钮的类型，颜色区分：
+   *  按钮的类型，区分总体样式：
    * 次要按钮。
-   * @values 'primary'、'secondary' 
+   * @values 'default'、'dashed'、'outline'、'text' 
    * @defaultValue 'primary'
    **/
   type: {
-    type: String as PropType<'primary' | 'secondary'>,
-    default: "primary"
+    type: String as PropType<'default' | 'dashed' | 'outline' | 'text' >,
+    default: "default"
   },
   /**
    * 按钮是否镂空，背景色透明

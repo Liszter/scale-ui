@@ -1,7 +1,7 @@
 <!--
  * @Author: liszter <liszter@qq.com>
  * @Date: 2022-11-27 11:52:28
- * @LastEditTime: 2023-01-30 10:09:20
+ * @LastEditTime: 2023-01-30 18:24:25
  * @LastEditors: liszter@qq.com liszter@qq.com
  * @Description: 暂无
  * @FilePath: \scale-ui\packages\components\button\src\button.vue
@@ -16,6 +16,7 @@
       size ? 's-button__' + props.size : '',
       shape ? 's-button__' + props.shape : '',
       {
+        's-button__block': props.block,
         's-button__isPlain': props.plain,
         's-button__isDisabled': props.disabled,
         's-button__isLoading': props.loading,
@@ -44,9 +45,27 @@ const handleClick = () => {
 };
 </script>
 <style lang="scss" scoped>
-.s-button {
-  transition: all 0.2s linear;
 
+$primery-color: #008cff;
+$click-color: #008cffb1;
+$font-color-f: #fff;
+$font-color-0: #000;
+$secondary-color: #008cff54;
+
+$font-size-1: 14px;
+$font-size-2: 18px;
+$font-size-3: 22px;
+$font-size-4: 24px;
+$font-size-5: 28px;
+$font-size-6: 32px;
+
+.s-button {
+  background: $primery-color;
+  color: $font-color-f;
+  transition: all 0.2s linear;
+  cursor: pointer;
+  min-width: 28px;
+  min-height: 28px;
   // 按钮点击时的效果
   &:active {
     color: red;
@@ -60,21 +79,32 @@ const handleClick = () => {
   }
 }
 
-.s-button__primary {
-  background: #008cff;
-  color: #fff;
+// 'primary' | 'secondary' | 'dashed' | 'outline' | 'text'
+.s-button__default {
 }
-.s-button__secondary {
-  background: red;
-  color: #fff;
+.s-button__dashed {
+  background: transparent;
+  color: $font-color-0;
+  border: solid 2px red;
+}
+
+.s-button__outline {
+  background: transparent;
+  border: solid 1px $primery-color;
+  color: $font-color-0;
+}
+.s-button__text {
+  background: transparent;
+  color: $font-color-0;
 }
 
 .s-button__isPlain {
   background: transparent;
 }
 
-.button__isDisabled {
+.s-button__isDisabled {
   background: contrast(95%);
+  cursor: not-allowed;
 }
 
 .button__long {
@@ -101,10 +131,13 @@ const handleClick = () => {
 .s-button__square {
   border-radius: 0;
 }
-.s-button__cicle {
+.s-button__circle {
   border-radius: 50%;
 }
 .s-button__round {
   border-radius: 6px;
+}
+.s-button__block {
+  display: block;
 }
 </style>
