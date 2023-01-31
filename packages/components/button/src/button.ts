@@ -2,7 +2,7 @@
  * @Author: liszter@qq.com liszter@qq.com
  * @Date: 2023-01-29 15:16:01
  * @LastEditors: liszter@qq.com liszter@qq.com
- * @LastEditTime: 2023-01-30 17:50:52
+ * @LastEditTime: 2023-01-31 18:06:35
  * @FilePath: \scale-ui\packages\components\button\src\button.ts
  * @Description: 按钮组件 封装
  * 具体功能参考 props
@@ -22,6 +22,12 @@ export const buttonProps = {
       default: false
     },
 
+    // 字体颜色 
+    color: {
+      type: String,
+      default: ''
+    },
+
   /**
    *  按钮的类型，区分总体样式：
    * 次要按钮。
@@ -31,15 +37,6 @@ export const buttonProps = {
   type: {
     type: String as PropType<'default' | 'dashed' | 'outline' | 'text' >,
     default: "default"
-  },
-  /**
-   * 按钮是否镂空，背景色透明
-   * 
-   * @defaultValue false 填充颜色状态
-   * **/ 
-  plain: {
-    type: Boolean,
-    default: false
   },
 
   /**
@@ -54,6 +51,17 @@ export const buttonProps = {
   outlineStyle: {
     type: String,
     default: 'none'
+  },
+
+  // 背景颜色配置
+  theme: {
+    type: String,
+    default: ''
+  },
+  // 加载文字替换
+  loadingText: {
+    type: String,
+    default: '加载中'
   },
 
   /**

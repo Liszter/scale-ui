@@ -1,0 +1,144 @@
+@import "../../style/index.scss";
+
+
+.#{$cls-prefix}-button {
+
+  box-sizing: border-box;
+  height: $size-default;
+  min-width: $size-default;
+
+  color: $color-text-5;
+  font-size: $font-size-body-3;
+  font-weight: $font-weight-400;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  background-color: $color-primary-6;
+  // outline: none;
+  border-radius: $border-radius-medium;
+
+  transition: 0.1s;
+  appearance: none;
+
+  &:hover {
+    opacity: $opacity-9;
+  }
+  &:active {
+    opacity: $opacity-8;
+  }
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+
+  &__block {
+    display: block;
+  }
+
+
+
+  &__isDisabled {
+    background: contrast(95%);
+    cursor: not-allowed;
+    opacity: $opacity-8;
+
+    &:hover {
+      opacity: $opacity-8;
+    }
+    &:active {
+      opacity: $opacity-8;
+
+    }
+  }
+
+  &__long {
+    width: 100%;
+  }
+
+  &__mini {
+    padding: 2px 4px;
+  }
+  &__small {
+    padding: 4px 8px ;
+  }
+  &__medium {
+    padding: 6px 10px;
+  }
+  &__large {
+    padding: 8px 14px;
+  }
+
+  &__square {
+    border-radius: $radius-none;
+  }
+  &__circle {
+    border-radius: $radius-circle;
+  }
+  &__round {
+    border-radius: $radius-medium;
+  }
+ 
+
+  &__isLoading {
+    background: contrast(95%);
+    cursor: not-allowed;
+    opacity: $opacity-8;
+
+    &:hover {
+      opacity: $opacity-8;
+    }
+    &:active {
+      opacity: $opacity-8;
+
+    }
+  }
+
+
+
+  &__outline {
+    background: transparent;
+    color: $color-primary-6;
+    border: 1px solid $color-primary-6;
+  }
+
+  &__dotted {
+    background: transparent;
+    color: $color-primary-6;
+    border: 1px dotted $color-primary-6;
+  }
+
+  &__dashed {
+    background: transparent;
+    color: $color-primary-6;
+    border: dashed 1px $color-primary-6;
+  }
+
+  &__text {
+    background: transparent;
+    color: $color-primary-6;
+
+    &:hover {
+      opacity: $opacity-9;
+    }
+    &:active {
+      opacity: $opacity-8;
+    }
+  }
+
+
+
+  .loading {
+    display: flex;
+  }
+
+  .icon {
+    width: $size-3;
+    height: $size-3;
+    margin-right: 8px;
+  }
+
+}
+
+

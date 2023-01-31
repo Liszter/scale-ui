@@ -1,0 +1,18 @@
+
+$space-name: s;
+
+// 顺时针旋转
+
+.#{$space-name}-rotating {
+  animation: rotating 1s infinite;
+}
+
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
