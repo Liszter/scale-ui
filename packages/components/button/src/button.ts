@@ -2,7 +2,7 @@
  * @Author: liszter@qq.com liszter@qq.com
  * @Date: 2023-01-29 15:16:01
  * @LastEditors: liszter@qq.com liszter@qq.com
- * @LastEditTime: 2023-01-31 18:06:35
+ * @LastEditTime: 2023-02-02 10:49:21
  * @FilePath: \scale-ui\packages\components\button\src\button.ts
  * @Description: 按钮组件 封装
  * 具体功能参考 props
@@ -78,7 +78,7 @@ export const buttonProps = {
    * 正常、圆、倒角
    **/
   shape: {
-    type: String as PropType<'square' | 'round' | 'cicle'>,
+    type: String as PropType<'square' | 'round' | 'circle'>,
     default: 'square'
   },
   /**
