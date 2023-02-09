@@ -20,6 +20,7 @@ import {
   watch,
   withCtx
 } from "./chunk-7U2RC2UM.js";
+import "./chunk-RSJERJUL.js";
 
 // ../node_modules/.pnpm/@vitepress-demo-preview+component@2.1.0_d3clhbtmrwbkrr56hbqfqu7xfa/node_modules/@vitepress-demo-preview/component/dist/preview-component.js
 var $ = (t, o) => {

@@ -10,12 +10,14 @@ importers:
       '@types/gulp': ^4.0.10
       '@vitepress-demo-preview/component': ^2.1.0
       '@vitepress-demo-preview/plugin': ^1.1.6
+      '@vueuse/core': ^9.12.0
       child_process: ^1.0.2
       fs: 0.0.1-security
       gulp: ^4.0.2
       inquirer: ^9.1.4
       less: ^4.1.3
       less-loader: ^11.1.0
+      lodash: ^4.17.21
       path: ^0.12.7
       postcss: ^8.4.19
       sass: ^1.56.1
@@ -30,7 +32,9 @@ importers:
       '@scale-ui/utils': link:packages/utils
       '@vitepress-demo-preview/component': 2.1.0_d3clhbtmrwbkrr56hbqfqu7xfa
       '@vitepress-demo-preview/plugin': 1.1.6_d3clhbtmrwbkrr56hbqfqu7xfa
+      '@vueuse/core': 9.12.0_vue@3.2.36
       inquirer: 9.1.4
+      lodash: 4.17.21
       unocss: 0.49.1
       vitepress: 1.0.0-alpha.43_less@4.1.3+sass@1.56.1
     devDependencies:
@@ -973,6 +977,18 @@ packages:
     resolution: {integrity: sha512-Ewzq5Yhimg7pSztDV+RH1UDKBzmtqieXQlpTVm2AwraoRL/Rks96mvd8Vgi7Lj+h+TH8dv7mXD3FRZR3TUvbSg==}
     dev: false
 
+  /@vueuse/core/9.12.0_vue@3.2.36:
+    resolution: {integrity: sha512-h/Di8Bvf6xRcvS/PvUVheiMYYz3U0tH3X25YxONSaAUBa841ayMwxkuzx/DGUMCW/wHWzD8tRy2zYmOC36r4sg==}
+    dependencies:
+      '@types/web-bluetooth': 0.0.16
+      '@vueuse/metadata': 9.12.0
+      '@vueuse/shared': 9.12.0_vue@3.2.36
+      vue-demi: 0.13.11_vue@3.2.36
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    dev: false
+
   /@vueuse/core/9.12.0_vue@3.2.45:
     resolution: {integrity: sha512-h/Di8Bvf6xRcvS/PvUVheiMYYz3U0tH3X25YxONSaAUBa841ayMwxkuzx/DGUMCW/wHWzD8tRy2zYmOC36r4sg==}
     dependencies:
@@ -987,6 +1003,15 @@ packages:
 
   /@vueuse/metadata/9.12.0:
     resolution: {integrity: sha512-9oJ9MM9lFLlmvxXUqsR1wLt1uF7EVbP5iYaHJYqk+G2PbMjY6EXvZeTjbdO89HgoF5cI6z49o2zT/jD9SVoNpQ==}
+    dev: false
+
+  /@vueuse/shared/9.12.0_vue@3.2.36:
+    resolution: {integrity: sha512-TWuJLACQ0BVithVTRbex4Wf1a1VaRuSpVeyEd4vMUWl54PzlE0ciFUshKCXnlLuD0lxIaLK4Ypj3NXYzZh4+SQ==}
+    dependencies:
+      vue-demi: 0.13.11_vue@3.2.36
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
     dev: false
 
   /@vueuse/shared/9.12.0_vue@3.2.45:
@@ -2524,6 +2549,21 @@ packages:
 
   /vscode-textmate/8.0.0:
     resolution: {integrity: sha512-AFbieoL7a5LMqcnOF04ji+rpXadgOXnZsxQr//r83kLPr7biP7am3g9zbaZIaBGwBRWeSvoMD4mgPdX3e4NWBg==}
+    dev: false
+
+  /vue-demi/0.13.11_vue@3.2.36:
+    resolution: {integrity: sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==}
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      vue: 3.2.36
     dev: false
 
   /vue-demi/0.13.11_vue@3.2.45:

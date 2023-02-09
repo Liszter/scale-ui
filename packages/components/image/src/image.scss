@@ -4,4 +4,7 @@
 
 .#{$cls-prefix}-image {
 
+  &__preview {
+    cursor: pointer;
+  }
 }

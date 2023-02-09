@@ -174,7 +174,7 @@
  </s-image>
 ```
 
-## API
+## image API
 
 ### image Props
 名称 | 类型 | 默认值 | 说明 | 必传
@@ -190,12 +190,32 @@ preview | Boolean | false | 是否可进行预览 | N
 loading | String <`eager`> <`lazy`> | `eager` | 指定浏览器是应立即加载图像还是延迟加载图像。| N
 
 
-### Events
+### image Events
 
 名称 | 说明
 -- | --
 open | 打开预览
 close | 关闭预览
+
+
+## image-viewer API
+
+### image-viewer Props
+
+名称 | 类型 | 默认值 | 说明 | 必传
+-- | -- | -- | -- | --
+src | String | '' | 图片地址 | Y
+title | String | '图片预览' | 图片预览标题 | N
+zIndex | Number | 2000 | 图层 | N
+teleported | Boolean | false | image 自身是否插入至 body 元素上。 嵌套的父元素属性会发生修改时应该将此属性设置为 `true` | N  
+
+### image-viewer Events
+
+<!-- 名称 | 说明
+-- | --
+open | 打开预览
+close | 关闭预览 -->
+
 
 
 
