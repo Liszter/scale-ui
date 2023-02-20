@@ -1,8 +1,8 @@
 /*
  * @Author: liszter@qq.com liszter@qq.com
  * @Date: 2023-02-01 17:52:14
- * @LastEditors: liszter@qq.com liszter@qq.com
- * @LastEditTime: 2023-02-02 10:45:10
+ * @LastEditors: lishutao
+ * @LastEditTime: 2023-02-17 14:39:04
  * @FilePath: \scale-ui\packages\cli\inquirers\create.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -13,6 +13,9 @@
 
 import inquirer  from "inquirer";
 import fs from "fs";
+import path from "path";
+
+let p1 = path.join('__dirname')  
 
 /**
  * @Description: 创建文件， 文件名 + 内容
@@ -35,7 +38,7 @@ export function mkdirFile (dirName) {
   if (fs.existsSync(dirName)) {
     console.log('------该组件已存在------退出!')
   } else {
-    // 不存在这个文件
+    // 不存在这个文件 
     fs.mkdirSync(dirName)
   }
 }
