@@ -2,7 +2,7 @@
  * @Author: liszter@qq.com liszter@qq.com
  * @Date: 2023-01-30 15:51:16
  * @LastEditors: liszter@qq.com liszter@qq.com
- * @LastEditTime: 2023-02-06 10:26:13
+ * @LastEditTime: 2023-02-21 14:57:44
  * @FilePath: \scale-ui\examples\docs\.vitepress\config.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -55,11 +55,15 @@ export default defineConfig({
           ]
         },
         {
-          text: '组件',
+          text: '基础组件',
           items: [
+            { text: "icon 图标", link: "/components/icon/" },
+
             { text: "button 按钮", link: "/components/button/" },
             { text: "image 图片", link: "/components/image/" },
             { text: "paragraph 文本/段落", link: "/components/paragraph/" },
+            { text: "dialog 弹窗", link: "/components/dialog/" },
+
 
 
           ]

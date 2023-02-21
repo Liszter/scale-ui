@@ -1,72 +1,33 @@
 /*
  * @Author: liszter@qq.com liszter@qq.com
  * @Date: 2023-02-01 17:52:14
- * @LastEditors: lishutao
- * @LastEditTime: 2023-02-17 14:39:04
- * @FilePath: \scale-ui\packages\cli\inquirers\create.js
+ * @LastEditors: liszter@qq.com liszter@qq.com
+ * @LastEditTime: 2023-02-21 14:56:30
+ * @FilePath: \scale-ui\packages\cli\inquirers\cre1.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 
-// 新建一个组件
 
-// 新建组件对应的vitepress
+let path = require('path')
+let fs = require('fs')
+const inquirer = require('inquirer');
 
-import inquirer  from "inquirer";
-import fs from "fs";
-import path from "path";
-
-let p1 = path.join('__dirname')  
-
-/**
- * @Description: 创建文件， 文件名 + 内容
- * @param {*} filename
- * @param {*} content
- */
-export function createFile(filename, content) {
-  fs.writeFile(`./${filename}`, content, (err) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(`--${filename}--创建成功`);
-    }
-  });
-}
-
-
-// 创建文件夹
-export function mkdirFile (dirName) {
-  if (fs.existsSync(dirName)) {
-    console.log('------该组件已存在------退出!')
-  } else {
-    // 不存在这个文件 
-    fs.mkdirSync(dirName)
+const questions = [
+  {
+    type: 'input',
+    name: 'newComponentsName',
+    message: "输入新建组件名称--",
   }
-}
+]
 
-// console.log('fileContent', fileContent)
-
-// 1. 创建组件的文件夹, 位置指定
-// 用户输入内容
-let fileContent = await inquirer.prompt([{
-  type: "input",
-  message: "输入新建组件名称--",
-  name: "name",
-  default: ''
-}])
-// 创建文件
-
-mkdirFile(fileContent.name)
-// 创建文件中的 index 文件
-let name = fileContent.name
 // 大写开头
 function titleCase(str) {
-  return str.slice(0,1).toUpperCase() +str.slice(1).toLowerCase();
-  }
- console.log(titleCase('adsasdqweq')) 
-
+  return str.slice(0, 1).toUpperCase() + str.slice(1).toLowerCase();
+}
 
 //  创建 index.ts 文件
-const indexContent = `
+const indexContent = function (name) {
+  return `
 import  ${name} from "./src/${name}.vue";
 import { withInstall } from "@scale-ui/utils";
 
@@ -78,33 +39,20 @@ export {
 }
 
 export default S${titleCase(name)} 
-
 `
+}
 
-createFile(`./${fileContent.name}/index.ts`, indexContent)
-
-
-// 创建 组件 文件
-
-mkdirFile(`./${fileContent.name}/src`)
-
-// 创建组件文件scss内容
-const scssContent = `
+// 创建组件文件src/scss内容
+const scssContent = (name) => `
 @import "../../style/index.scss";
 
-
-.#{$cls-prefix}-${fileContent.name} {
+.#{$cls-prefix}-${name} {
 
 }`
 
-createFile(`./${fileContent.name}/src/${fileContent.name}.scss`, scssContent)
-
-
-// 创建组件文件 ts 内容
-const propsContent = `
-  
+// 组件文件  src/props
+const propsContent = (name) => `
 import type { ExtractPropTypes, PropType } from "vue"
-
 export const ${name}Props = {
     /**
      *  ${name}类型：
@@ -112,16 +60,13 @@ export const ${name}Props = {
     type: {
       type: String,
     },
-
 }
 export type ${name}Props = ExtractPropTypes<typeof ${name}Props>
 `
 
-createFile(`./${fileContent.name}/src/${fileContent.name}.ts`, propsContent)
+// src/vue 文件
 
-
-// 创建组件文件 ts 内容
-const vueContent = `
+const vueContent = (name) => `
 <template>
   <div class="s-${name}">
 
@@ -144,12 +89,91 @@ const handleClick = () => {
 <style lang="scss" scoped>
 @import "./${name}.scss";
 </style>
-
 `
 
-createFile(`./${fileContent.name}/src/${fileContent.name}.vue`, vueContent)
 
 
+inquirer.prompt(questions).then((answers) => {
+
+  // 1. 获取组件名称
+  let cname = answers.newComponentsName
+  // 2. 获取组件的位置
+  let zujianPath = path.join(__dirname, '../', '../', 'components', cname)
+  // 3. 创建对应的文件夹
+  try {
+    fs.mkdirSync(zujianPath)
+  } catch (error) {
+    console.log(error)
+    return
+  }
+
+  // 4. 创建文件 index.ts
+  createFile('index.ts', zujianPath, indexContent(cname))
+
+  // 5. 创建 src 文件夹
+  let srcPath = path.join(zujianPath, 'src')
+  try {
+    fs.mkdirSync(srcPath)
+  } catch (error) {
+    console.log(error)
+    return
+  }
+
+  // 创建对应的  name。scss name。vue name.ts
+  createFile(`${cname}.ts`, srcPath, propsContent(cname))
+  createFile(`${cname}.scss`, srcPath, scssContent(cname))
+  createFile(`${cname}.vue`, srcPath, vueContent(cname))
+
+  // 7. 在components 中添加 组件名, 引入组件
+  /**
+   * @param path
+   * @param content
+   * @param callback
+   * **/
+  let ComponentsPath = path.join(__dirname, '../', '..', 'components', 'components.ts')
+
+  fs.appendFile(ComponentsPath, `export { S${titleCase(cname)} } from './${cname}';
+    `, function (e) {
+    console.log(e)
+  })
+
+  // 创建 vitepress 文件
+
+  let mdPath = path.join(__dirname, '../', '..', '..', './examples', './docs', './components', `${cname}`)
+
+  try {
+    fs.mkdirSync(mdPath)
+  } catch (error) {
+    console.log(error)
+  }
+
+  createFile('index.md', mdPath, `#${cname}`)
+});
+
+// 创建文件
+
+/**
+ * @name 新文件的名称
+ * @fpath 所在的文件夹下
+ * @content 文件的内容
+ * 
+ * **/
+
+function createFile(name, fpath, content) {
+  fpath = path.join(fpath, `./${name}`)
+  try {
+    fs.writeFile(fpath, content, (err) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(`--${name}--创建成功`);
+      }
+    });
+  } catch (error) {
+    console.log(error)
+  }
+
+}
 
 
 

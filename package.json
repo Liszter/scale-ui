@@ -30,7 +30,7 @@
     "@vitepress-demo-preview/component": "^2.1.0",
     "@vitepress-demo-preview/plugin": "^1.1.6",
     "@vueuse/core": "^9.12.0",
-    "inquirer": "^9.1.4",
+    "inquirer": "^8.0.0",
     "lodash": "^4.17.21",
     "unocss": "^0.49.1",
     "vitepress": "1.0.0-alpha.43"
