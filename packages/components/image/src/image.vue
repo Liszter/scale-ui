@@ -1,7 +1,7 @@
 <!--
  * @Author: liszter <liszter@qq.com>
  * @Date: 2023-02-02 20:36:08
- * @LastEditTime: 2023-02-09 17:41:13
+ * @LastEditTime: 2023-02-22 14:32:37
  * @LastEditors: liszter@qq.com liszter@qq.com
  * @Description: 暂无
  * @FilePath: \scale-ui\packages\components\image\src\image.vue
@@ -14,16 +14,11 @@
       :alt="props.alt"
       :loading="props.loading"
       :style="{ ...sizeStyle, ...fitStyle }"
-      :class="[props.preview?'s-image__preview':'']"
+      :class="[props.preview ? 's-image__preview' : '']"
       @click="clickHandler"
-    
-      />
+    />
     <template v-if="props.preview">
-      <image-viewer
-      v-if="showViewer"
-      :src="props.src"
-      @close="closeViewer"
-      >
+      <image-viewer v-if="showViewer" :src="props.src" @close="closeViewer">
       </image-viewer>
     </template>
   </div>
@@ -42,7 +37,7 @@ const emit = defineEmits(["clickHandler"]);
 const props = defineProps(imageProps);
 
 // 展示预览图片
-const showViewer = ref(false)
+const showViewer = ref(false);
 
 // 验证尺寸
 const normalizeImageSizeProp = function (size?: string | number) {
@@ -71,29 +66,22 @@ const fitStyle = computed<CSSProperties>(() => {
 
 // 记录当前页面的 overflow 状态
 
-const prevOverflow  = document.body.style.overflow
+const prevOverflow = document.body.style.overflow;
 
 // 点击时触发的事件
 const clickHandler = () => {
-  
-  document.body.style.overflow = 'hidden'
-
-  showViewer.value = true
-
-  // emit("clickHandler");
+  if (props.preview) {
+    document.body.style.overflow = "hidden";
+    showViewer.value = true;
+    // emit("clickHandler");
+  }
 };
 
-
 const closeViewer = () => {
+  document.body.style.overflow = prevOverflow;
 
-  document.body.style.overflow = prevOverflow
-    
-
-  showViewer.value = false
-
-}
-
-
+  showViewer.value = false;
+};
 </script>
 
 <style lang="scss" scoped>
