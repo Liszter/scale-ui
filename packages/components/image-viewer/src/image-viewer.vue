@@ -22,7 +22,7 @@
 </template>
 
 <script lang="ts" setup name="SImage-viewer">
-import { throttle } from "lodash";
+import  throttle from "lodash/throttle";
 import { imageViewerProps } from "./image-viewer";
 import { onMounted, computed, ref, effectScope, CSSProperties } from "vue";
 import { isNumber, useEventListener } from "@vueuse/core";
