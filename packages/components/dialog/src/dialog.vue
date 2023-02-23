@@ -2,7 +2,7 @@
  * @Author: liszter@qq.com liszter@qq.com
  * @Date: 2023-02-21 14:56:58
  * @LastEditors: liszter@qq.com liszter@qq.com
- * @LastEditTime: 2023-02-23 15:18:51
+ * @LastEditTime: 2023-02-23 16:28:46
  * @FilePath: \scale-ui\packages\components\dialog\src\dialog.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -29,7 +29,7 @@
         >
           <!-- aria-modal="true"——对话框以外的元素无法被聚焦  -->
           <!-- close -->
-          <div class="s-overlay-dialog__close" v-if="closeable" @click="close">
+          <div :class="[props.fullscreen?'s-overlay-dialog__close-full':'s-overlay-dialog__close']" v-if="closeable" @click="close">
             ×
           </div>
           <slot />
@@ -134,10 +134,18 @@ const overlayDialogStyle = computed(() => {
   return resStyle as {};
 });
 
-const fullscreenStyle = computed(() => ({
-  width: "100%",
-  height: "90%",
-}));
+const fullscreenStyle = computed(() => {
+
+  if (props.fullscreen) {
+    return {
+      width: "100%",
+      height: "100%",
+      borderRadius: '20px',
+    }
+  } else {
+    return {}
+  }
+});
 
 // // 遮罩点击事件
 const overlayEvent = {

@@ -1,6 +1,6 @@
 {
   "hash": "c473e88e",
-  "browserHash": "87e2e91e",
+  "browserHash": "6ceb9805",
   "optimized": {
     "vue": {
       "src": "../../../../../node_modules/.pnpm/vue@3.2.36/node_modules/vue/dist/vue.runtime.esm-bundler.js",
@@ -25,6 +25,12 @@
       "file": "@vueuse_core.js",
       "fileHash": "f83deb24",
       "needsInterop": false
+    },
+    "lodash/debounce": {
+      "src": "../../../../../node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/debounce.js",
+      "file": "lodash_debounce.js",
+      "fileHash": "6a581df4",
+      "needsInterop": true
     }
   },
   "chunks": {

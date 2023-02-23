@@ -11,4 +11,5 @@ export { SButton } from './button';
 export { SImage } from './image';
 export { SParagraph } from './paragraph';
 export { SDialog } from './dialog';
+    export { SScalebox } from './scalebox';
     

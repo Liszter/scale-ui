@@ -20,7 +20,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .s-overlay-dialog {
@@ -51,6 +51,25 @@
     right: 0px;
     top: -40px;
     color: $color-text-4;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+
+    ::selection {
+      background-color: transparent;
+    }
+  }
+
+  &__close-full {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    // border: solid 1px $color-border-1;
+    font-size: $size-6;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: $color-text-1;
     line-height: 40px;
     text-align: center;
     cursor: pointer;

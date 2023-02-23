@@ -1,0 +1,23 @@
+
+@import "../../style/index.scss";
+
+.#{$cls-prefix}-scalebox {
+  box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    transform-origin: 0 0;
+  
+  .scale-box {
+  
+    position: relative;
+    user-select: none;
+    transform-origin: 0 0;
+    transition: all 0.3s linear;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+  }
+
+}
