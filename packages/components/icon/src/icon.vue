@@ -1,14 +1,13 @@
 <!--
  * @Author: liszter <liszter@qq.com>
  * @Date: 2022-11-27 11:52:28
- * @LastEditTime: 2022-11-27 16:45:14
- * @LastEditors: lishutao
+ * @LastEditTime: 2023-05-06 09:55:10
+ * @LastEditors: liszter@qq.com liszter@qq.com
  * @Description: 暂无
  * @FilePath: \scale-ui\packages\components\icon\src\icon.vue
 -->
 <template>
   <i class="s-icon" :style="style">
-  <slot></slot>
   </i>
 </template>
 
@@ -21,7 +20,7 @@ const props = defineProps(iconProps);
         return {};
       }
       return {
-        ...(props.size ? { "font-size": props.size + "px" } : {}),
+        ...(props.size ? { "fontSize": props.size + "px" } : {}),
         ...(props.color ? { "color": props.color } : {}),
       };
     });
