@@ -19,10 +19,10 @@ import {
   unref,
   watch,
   withCtx
-} from "./chunk-7U2RC2UM.js";
+} from "./chunk-VHQXXAES.js";
 import "./chunk-RSJERJUL.js";
 
-// ../node_modules/.pnpm/@vitepress-demo-preview+component@2.1.0_d3clhbtmrwbkrr56hbqfqu7xfa/node_modules/@vitepress-demo-preview/component/dist/preview-component.js
+// ../node_modules/.pnpm/@vitepress-demo-preview+component@2.1.0_vitepress@1.0.0-alpha.43_vue@3.2.47/node_modules/@vitepress-demo-preview/component/dist/preview-component.js
 var $ = (t, o) => {
   const e = t.__vccOpts || t;
   for (const [c, i] of o)
