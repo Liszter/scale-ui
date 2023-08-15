@@ -4,12 +4,16 @@
   "description": "",
   "scripts": {
     "dev": "pnpm -C play dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "changeset": "changeset",
+    "packages-version": "changeset version",
+    "publish": "changeset publish --registry=https://registry.npmjs.com/"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@changesets/cli": "^2.26.1",
     "@types/gulp": "^4.0.10",
     "child_process": "^1.0.2",
     "fs": "0.0.1-security",
