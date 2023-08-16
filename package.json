@@ -10,7 +10,7 @@
     "publish": "changeset publish --registry=https://registry.npmjs.com/"
   },
   "keywords": [],
-  "author": "",
+  "author": "liszterl",
   "license": "ISC",
   "devDependencies": {
     "@changesets/cli": "^2.26.1",

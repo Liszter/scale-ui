@@ -163,7 +163,7 @@
 ## 图片预览 (待完善该功能)
 
    <s-image
-    preview="true"
+    :preview="true"
     src="https://biosafe.luoxunzmy.com:48756/izhibao/2023/02/01/352b6869-0a51-448b-8a83-16180b46c9bf.png">
  </s-image>
 

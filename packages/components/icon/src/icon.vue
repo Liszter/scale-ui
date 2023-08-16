@@ -1,8 +1,8 @@
 <!--
  * @Author: liszter <liszter@qq.com>
  * @Date: 2022-11-27 11:52:28
- * @LastEditTime: 2023-05-06 09:55:10
- * @LastEditors: liszter@qq.com liszter@qq.com
+ * @LastEditTime: 2023-08-15 13:57:33
+ * @LastEditors: lishutao
  * @Description: 暂无
  * @FilePath: \scale-ui\packages\components\icon\src\icon.vue
 -->
@@ -11,7 +11,7 @@
   </i>
 </template>
 
-<script lang="ts" setup name="SButton">
+<script lang="ts" setup name="SIcon">
 import { computed } from "vue";
 import { iconProps } from "./icon";
 const props = defineProps(iconProps);
